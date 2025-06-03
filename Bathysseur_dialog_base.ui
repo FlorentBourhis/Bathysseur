@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BathysseurDialogBase</class>
+ <widget class="QDialog" name="BathysseurDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>770</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bathysseur</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
+  </property>
+  <widget class="QDialogButtonBox" name="button_box">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>870</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="menuGeneral">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>370</y>
+     <width>750</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>4</number>
+   </property>
+   <widget class="QWidget" name="tableGenerationBerges">
+    <attribute name="title">
+     <string>Génération des berges</string>
+    </attribute>
+    <widget class="QLabel" name="labelAxeCoursDEauGenerationBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>725</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fichier dans lequel est décrit l'axe du cours d'eau :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierAxeCoursDEauGenerationBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>725</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.shp</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boutonGenererLesBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>725</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Générer les berges</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelMNTGenerationBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>725</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Modèle numérique de terrain :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierMNTGenerationBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>725</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.tif</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDiscretisationAxe">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>380</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Discrétisation de l'axe du cours d'eau (en mètres) :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="discretisationAxe">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>160</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelLargeurMaxCoursDEau">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>380</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Largeur maximale du cours d'eau :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="largeurMaximaleRiviere">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>220</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDiscretisationProfil">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>380</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Discrétisation du profil en travers (en mètres) :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="discretisationProfilTravers">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>190</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelCritereDetectionBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>250</y>
+       <width>380</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Critère de détection des berges :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="critereDetectionBerge">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>250</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressionConstructionBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>725</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tableGenerationProfilsIntermediaires">
+    <attribute name="title">
+     <string>Génération des profils intermédiaires</string>
+    </attribute>
+    <widget class="QLabel" name="labelFichierBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>705</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fichier dans lequel les berges du cours d'eau sont décrites :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>235</y>
+       <width>725</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.shp</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelAxeCoursDEau">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>705</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fichier dans lequel est décrit l'axe du cours d'eau :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierAxeCoursDEau">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>285</y>
+       <width>725</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.shp</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelProfilsBathymetriques">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>705</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fichier dans lequel sont décrits les profils où la bathymétrie a été levée :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierProfilsLeveBathy">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>335</y>
+       <width>725</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.shp</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelDistanceEntreProfilsIntermediaires">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>370</y>
+       <width>260</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Distance entre les profils intermediaires (en mètres) :</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="distanceEntreProfilsIntermediaires">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>370</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boutonGenererProfilsIntermediaires">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>400</y>
+       <width>725</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Générer les profils où interpoler</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressionCalculProfilOuInterpoler">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>430</y>
+       <width>725</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>24</number>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>725</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Description des fichiers demandés&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; text-decoration: underline;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;1. Fichier des berges : &lt;/span&gt;le premier fichier demandé décrit les berges du cours d'eau. Ce fichier shapefile contient deux champs : un champ &lt;span style=&quot; font-style:italic;&quot;&gt;id&lt;/span&gt; et un champ &lt;span style=&quot; font-style:italic;&quot;&gt;berge&lt;/span&gt; (peu importe les noms). Dans le deuxième champ, il est indiqué s'il s'agit de la berge gauche (indiquer &lt;span style=&quot; font-style:italic;&quot;&gt;Gauche&lt;/span&gt; dans le champ) ou de la berge droite (indiquer &lt;span style=&quot; font-style:italic;&quot;&gt;Droite&lt;/span&gt; dans le champ). Les berges décrites dans ce fichier sont des polylignes définies de l'amont vers l'aval.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;2. Fichier de l'axe du cours d'eau :  &lt;/span&gt;le deuxième fichier demandé décrit l'axe du cours d'eau. Cet axe est une polyligne et il est défini de l'amont vers l'aval. Aucune autre contrainte à signaler.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;3. Fichier des profils bathymétriques : &lt;/span&gt;le troisième fichier demandé décrit les profils bathymétriques. Chaque profil bathymétrique est décrit par un segment de droite (polyligne qui ne contient que deux points) et qui intersecte les deux berges (la berge droite et la berge gauche). Ce fichier ne contient qu'un champ &lt;span style=&quot; font-style:italic;&quot;&gt;id&lt;/span&gt;. Dans ce champ, il est donné le numéro du profil.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Tous ces fichiers doivent être définis dans le référentiel RGF93 (EPSG:2154).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tableExtractionDonneesMNT">
+    <attribute name="title">
+     <string>Extraction des données du MNT</string>
+    </attribute>
+    <widget class="QLabel" name="labelMNT">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>180</y>
+       <width>600</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Modèle numérique de terrain : </string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierMNT">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>725</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.tif</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="boutonDeterminerZBerges">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>230</y>
+       <width>725</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Calculer l'altitude des points d'intersection des berges avec les profils où interpoler (qui viennent d'être générés)</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="infoExtractionZMNT">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>725</width>
+       <height>120</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Description des fichiers demandés&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;1. Fichier des points d'intersection des berges avec les profils où interpoler :&lt;/span&gt; ce fichier a été généré lors de la phase précédente (la phase Génération des profils intermédiaires). Il n'y a pas besoin de le modifier. Ce fichier se nomme &lt;span style=&quot; font-style:italic;&quot;&gt;PointIntersectionBerge&lt;/span&gt; et se trouve dans le dossier de travail.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;2. Modèle numérique de terrain :&lt;/span&gt; il s'agit du modèle numérique de terrain du secteur étudié. Le modèle numérique de terrain n'a pas besoin d'être dans le dossier de travail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelFichierBergesPourExtraction">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>135</y>
+       <width>500</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Fichier dans lequel sont décrits les points d'intersection des profils avec les berges :</string>
+     </property>
+    </widget>
+    <widget class="QgsFileWidget" name="fichierPointsIntersectionBerge">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>150</y>
+       <width>725</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="filter">
+      <string>*.shp</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInformationAvanceeCalcul">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>260</y>
+       <width>725</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Aucun calcul n'a pour l'instant été lancé...</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tableConstructionBathymetrie">
+    <attribute name="title">
+     <string>Construction de la bathymétrie</string>
+    </attribute>
+    <widget class="QTabWidget" name="typeInterpolationChoisi">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>725</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>true</bool>
+     </property>
+     <property name="documentMode">
+      <bool>false</bool>
+     </property>
+     <property name="tabsClosable">
+      <bool>false</bool>
+     </property>
+     <property name="movable">
+      <bool>false</bool>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="interpolationPointsBathy">
+      <attribute name="title">
+       <string>Bathymétrie connue</string>
+      </attribute>
+      <widget class="QLabel" name="labelProfilAInterpoler">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>225</y>
+         <width>500</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier dans lequel sont décrits les points bathymétriques :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierPointsBathymetriques">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>240</y>
+         <width>700</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="dialogTitle">
+        <string/>
+       </property>
+       <property name="filter">
+        <string>*.shp</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="interpolationBathymetrie">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>345</y>
+         <width>700</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Construction des profils bathymétriques</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelDiscretisation">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>315</y>
+         <width>210</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Discrétisation (nombre de points par profil) :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="discretisationProfil">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>315</y>
+         <width>95</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressionCalculBathymetrieConnue">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>375</y>
+         <width>700</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="infoConstructionBathymetrie">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>700</width>
+         <height>205</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Construction de la bathymétrie à partir de données bathymétriques&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;L'objectif des calculs ici réalisés est d'interpoler sur les profils générés lors de la première étape (la phase &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;) des données bathymétriques connues. Pour ce faire, il sera utilisé les résultats de campagnes bathymétriques. Les données demandées sont décrites ci-dessous.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;1. Fichier dans lequel sont décrits les points bathymétriques :&lt;/span&gt; ce fichier shape contient les données bathymétriques. Les objets considérés sont des points. Pour chacun d'eux, deux données sont connues : la côte du fond du cours d'eau et le profil bathymétrique auquel il se rattache. Le fichier shape contient donc deux champs : un champ &lt;span style=&quot; font-style:italic;&quot;&gt;Profil&lt;/span&gt; dans lequel il est indiqué le numéro du profil bathymétrique auquel se rattache le point considéré et un champ &lt;span style=&quot; font-style:italic;&quot;&gt;Z&lt;/span&gt; dans lequel est indiquée la côte du point.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;2. La discrétisation du profil :&lt;/span&gt; lors de l'interpolation, chaque profil intermédiaire est découpé. Ils sont découpés en segments successifs, colinéaires et d'égales longueurs. Les points de jonction des différents segments sont les points sur lesquels la bathymétrie sera interpolée. Ce champ &lt;span style=&quot; font-style:italic;&quot;&gt;Discrétisation du profil&lt;/span&gt; permet ainsi de définir le nombre de segments dont, finalement, seront composés les profils où la bathymétrie sera interpolée.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelMNTpourDiscretisation">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>270</y>
+         <width>210</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modèle numérique de terrain (facultatif) :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierCaracteristiquesMNT">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>285</y>
+         <width>700</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="filter">
+        <string>*.tif</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="boutonCalculDiscretisation">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>315</y>
+         <width>110</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <italic>false</italic>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="text">
+        <string>Calculer (facultatif)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="boutonAideDiscretisation">
+       <property name="geometry">
+        <rect>
+         <x>445</x>
+         <y>315</y>
+         <width>50</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Aide</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="constructionRasterBathymetrie">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>405</y>
+         <width>700</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Construire le raster de la bathymétrie (facultatif)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="interpolationVirtuelle">
+      <attribute name="title">
+       <string>Bathymétrie virtuelle</string>
+      </attribute>
+      <widget class="QPushButton" name="constructionBathymetrieVirtuelle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>330</y>
+         <width>700</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Construction des profils bathymétriques (bathymétrie virtuelle)</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="profondeur">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>275</y>
+         <width>80</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelHauteurBathymetrie">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>275</y>
+         <width>240</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Différence d'altitude H (en mètres) :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierProfilsOuInterpoler">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>245</y>
+         <width>700</width>
+         <height>30</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierProfilsAInterpoler">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>230</y>
+         <width>580</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier dans lequel sont décrits les profils où interpoler :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelDiscretisationDemiProfil">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>300</y>
+         <width>140</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Discrétisation du demi-profil :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="discretisationDemiProfil">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>300</y>
+         <width>80</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="infoConstructionBathymetrieVirtuelle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>700</width>
+         <height>215</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Construction d'une bathymétrie virtuelle&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;L'idée est ici de construire une bathymétrie en l'absence de données bathymétriques. La bathymétrie construite sera donc totalement virtuelles. Cette bathymétrie aura une forme elliptique : plus exactement, elle sera composée de deux quarts ellipses. Le premier reliera la berge la plus haute au point bas du profil bathymétrique et le second, ce point bas à la berge la plus basse. Le point bas du profil sera situé en son milieu. Pour procéder à la construction de cette bathymétrie virtuelle, les données décrites ci-dessous seront nécessaires.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. &lt;span style=&quot; font-style:italic;&quot;&gt;Fichier dans lequel les profils où interpoler sont décrits :&lt;/span&gt; il s'agit du fichier générer lors de la première étape (la phase &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;). Ce fichier shape est dans le répertoire de travail. Il se nomme &lt;span style=&quot; font-style:italic;&quot;&gt;ProfilsInterpolationBathymetrie.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;2. Différence d'altitude H (en mètres) : &lt;/span&gt;il s'agit de la différence d'altitude entre le point bas de la bathymétrie qui sera générée et l'altitude de la plus basse des deux berges.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;3. Discrétisation du demi-profil :&lt;/span&gt; il s'agit du nombre de segments dont, finalement, sera composé le demi-profil bathymétrique. Plus il y aura de segments, plus la bathymétrie finale se rapprochera de deux quarts d'ellipse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressionCalculBathymetrieVirtuelle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>360</y>
+         <width>700</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="ligneEauInitiale">
+      <attribute name="title">
+       <string>Ligne d'eau initiale</string>
+      </attribute>
+      <widget class="QLabel" name="labelFichierProfilsBathymetriques">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>580</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier dans lequel sont décrits les profils bathymétriques :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierProfilsBathymetriques">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>275</y>
+         <width>700</width>
+         <height>30</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelDebitPermanent">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>305</y>
+         <width>150</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Pourcentage du débit maximal :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pourcentageDebit">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>305</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="genererLigneEauInitiale">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>360</y>
+         <width>700</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Générer la ligne d'eau initiale</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelDebitPermanent_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>330</y>
+         <width>180</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Coefficient de Strickler du lit mineur :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="coefficientStrickler">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>330</y>
+         <width>100</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="infoLigneEauInitiale">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>700</width>
+         <height>240</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Construction d'une ligne d'eau initiale (pour Telemac2D)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;L'idée des calculs menés ici est de construire une ligne d'eau initiale pour Telemac2D. Concrètement, cela consistera à définir, pour chaque profil généré lors de la première étape (la phase &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;), la côte de l'eau. Cette côte de l'eau sera calculée en utilisant la formule de Manning-Strickler. La formule de Manning-Strickler présente deux inconnues : la hauteur d'eau et le débit. Puisqu'on cherche la hauteur d'eau, c'est le débit qui sera fixé. Pour ce faire, il sera calculé le débit maximal pouvant circuler dans le cours d'eau sans qu'il y ait débordement (c'est-à-dire, tel que pour chaque profil, la hauteur d'eau soit en-dessous de la berge la plus basse). Une fois celui-ci calculé, il est pris un pourcentage de ce débit pour déterminer les hauteurs d'eau au niveau de chaque profil. Les données nécessaires à la réalisation des calculs sont présentées ci-dessous.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. &lt;span style=&quot; font-style:italic;&quot;&gt;Fichier dans lequel les profils où interpoler sont décrits :&lt;/span&gt; il s'agit du fichier générer lors de la première étape (la phase &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;). Ce fichier shape est dans le répertoire de travail. Il se nomme &lt;span style=&quot; font-style:italic;&quot;&gt;ProfilsInterpolationBathymetrie.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;2. Pourcentage du débit maximal :&lt;/span&gt; cette donnée est utilisée pour déterminer le débit qui circulera dans le cours d'eau. Ce débit connu, les hauteurs d'eau atteintes au droit de chaque profil peuvent être calculées.&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;3. Coefficient de Strickler du lit mineur :&lt;/span&gt; cette donnée est nécessaire pour pouvoir utiliser la formule de Manning-Strickler.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="progressionCalculLigneEauInitiale">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>390</y>
+         <width>700</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tableUtilitaires">
+    <attribute name="title">
+     <string>Utilitaires</string>
+    </attribute>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>725</width>
+       <height>451</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="ConstructionPolygone">
+      <attribute name="title">
+       <string>Construction du polygone des berges</string>
+      </attribute>
+      <widget class="QTextBrowser" name="infoPolygoneBerge">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>700</width>
+         <height>100</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Construction d'un polygone à partir des lignes de berge&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;L'objectif de cet utilitaire est de construire un polygone à partir des lignes de berge. Ce polygone peut s'avérer très utilse. En effet, lorsqu'il est utilisé le module TIN interpolation de QGis pour interpoler la bathymétrie, le raster obtenu déborde des berges. La fonction grass r.mask permet d'élminer de ce raster les pixels qui se trouvent en dehors du polygone des berges. Pour mener cette opération, la seule donnée d'entrée nécessaire est le fichier shape qui contient les lignes de berge.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="infoPolygoneBergeConstruit">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>195</y>
+         <width>700</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Le polygone n'a pas encore été généré.</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="constructionPolygoneBerge">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>165</y>
+         <width>700</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Construction du polygone</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierBergesPourPolygone">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>301</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier dans lequel les berges du cours d'eau sont décrites :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierBergesPourPolygone">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>135</y>
+         <width>700</width>
+         <height>30</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="ExploitationDonneesGeometres">
+      <attribute name="title">
+       <string>Exploitation des données du géomètre</string>
+      </attribute>
+      <widget class="QgsFileWidget" name="fichierGeometre">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>280</y>
+         <width>700</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="filter">
+        <string>*.shp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierGeometre">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>265</y>
+         <width>400</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier shape généré à partir du fichier dwg fourni par le géomètre :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="constructionProfilsAvecBathymetrie">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>395</y>
+         <width>700</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Construction des profils où la bathymétrie est connue</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierBerge">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>355</y>
+         <width>100</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier des berges :</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierBergesPourProfilsBathy">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>370</y>
+         <width>700</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="filter">
+        <string>*.shp</string>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierAxePourProfilsBathy">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>325</y>
+         <width>700</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="filter">
+        <string>*.shp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierAxe">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>310</y>
+         <width>200</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier décrivant l'axe du cours d'eau :</string>
+       </property>
+      </widget>
+      <widget class="QTextBrowser" name="texteExplicatifExploitationDonneesGeometre">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>700</width>
+         <height>251</height>
+        </rect>
+       </property>
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Exploitation des fichiers fournis par le géomètre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Les fichiers fournis par le géomètre peuvent être au format dwg. Dans ce cas, il existe des applications qui permettent de transformer ce fichier dwg en fichier dxf qui peut être ouvert dans Qgis. Une fois ouvert dans Qgis, les profils bathymétriques peuvent être enregistrés au format shape. Les profils bathymétriques, dans ce nouveau fichier, sont des polylignes. Le présent utilitaire permet de produire deux fichiers à partir de ces polylignes :&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. un fichier dans lequel sont recensés les profils bathymétriques : ces profils sont des images simplifiées des polylignes initiales. En effet, les profils produits seront des segments de droite, mais ils seront numérotés et formatés de manière à être directement utilisables pour construire les profils intermédiaires (cf. onglet &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;) ;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. un fichier dans lequel sont recensés les points bathymétriques : dans le fichier produit, chaque point sera associé à l'un des profils du fichier présenté ci-dessus. Les altitudes des points seront indiqués dans la table attributaire. Le fichier produit sera directement utilisable pour construire la bathymétrie du cours d'eau (cf. onglet &lt;span style=&quot; font-style:italic;&quot;&gt;Construction de la bathymétrie&lt;/span&gt;).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3 fichiers seront nécessaires pour mener les calculs : le fichier shape construit à partir du fichier dwg fourni par le géomètre, ainsi que les fichiers décrivant l'axe du cours d'eau et ses berges. Aucun formalisme particulier n'est demandé pour le premier fichier. Les formalismes des deux autres fichiers ont déjà été décrit dans l'onglet &lt;span style=&quot; font-style:italic;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="AttributionProfilsPoints">
+      <attribute name="title">
+       <string>Attribution des points bathymétriques à un profil</string>
+      </attribute>
+      <widget class="QgsFileWidget" name="fichierPointsGeometre">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>25</y>
+         <width>700</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QgsFileWidget" name="fichierProfilsSansPoints">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>700</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierPointsSansAttribution">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>511</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier shape dans lequel sont stockés les points bathymétriques à affecter aux profils bathymétriques :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFichierProfilsSansPoints">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>55</y>
+         <width>601</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fichier shape dans lequel sont décrits les profils bathymétriques (les points bathymétriques seront affectés à ces profils)  :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelDistanceMaximalePointsProfils">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>511</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Distance maximale entre un point bathymétrique et le profil auquel il est peut-être rattaché (en mètres) :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="distanceMaximalePointsProfils">
+       <property name="geometry">
+        <rect>
+         <x>520</x>
+         <y>100</y>
+         <width>190</width>
+         <height>20</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="boutonAffectationPointsProfils">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>700</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Lancer le calcul</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QTextBrowser" name="presentationPlugIn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>750</width>
+     <height>350</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Description du plug-in Bathysseur&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Fonction du plug-in&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Le plug-in Bathysseur permet de construire la bathymétrie d'un cours d'eau à partir de profils bathymétriques.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Préalable&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pour utiliser ce plug-in, il faut créer un répertoire de travail dans lequel seront :&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. stockés tous les fichiers d'entrée (sauf le MNT, qui peut être dans n'importe quel dossier).&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. générés tous les fichiers de sortie.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Il n'y a pas de contrainte sur la localisation de ce dossier de travail.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Procédure à suivre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;La construction de la bathymétrie à partir de profils bathymétriques, telle qu'elle est réalisée dans ce plug-in, n'est pas immédiate. Elle est réalisée par étapes. Ces étapes sont décrites ci-dessous :&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1. Il s'agit tout d'abord de construire les profils sur lesquels la bathymétrie sera interpolée. Ceci est réalisé dans l'onglet &lt;span style=&quot; font-style:italic; color:#000000;&quot;&gt;Génération des profils intermédiaires&lt;/span&gt;.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;2. Il s'agit ensuite d'extraire (du MNT) l'altitude des berges au niveau des profils où la bathymétrie sera interpolée. Ceci est réalisé dans l'onglet &lt;span style=&quot; font-style:italic;&quot;&gt;Extraction des données du MNT&lt;/span&gt;.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;3. Enfin, il s'agit de d'interpoler la bathymétrie connue sur les profils intermédiaires générés à l'étape 1. Ceci est réalisé dans l'onglet &lt;span style=&quot; font-style:italic;&quot;&gt;Construction de la bathymétrie&lt;/span&gt;.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Génération du raster bathymétrique&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Une fois toutes ces opérations réalisées, il reste à générer le raster décrivant la bathymétrie du cours d'eau étudié. Ceci n'est pas réalisé par le plug-in. L'opérateur pourra utiliser la fonction &lt;span style=&quot; font-style:italic;&quot;&gt;Tin interpolation&lt;/span&gt; de QGis pour générer le raster bathymétrique. Il utilisera le dernier fichier généré (celui qui contiendra les profils bathymétriques). Il aura soin d'interpoler la bathymétrie en utilisant l'option &lt;span style=&quot; font-style:italic;&quot;&gt;Structure Lines&lt;/span&gt;. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsFileWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsfilewidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>button_box</sender>
+   <signal>rejected()</signal>
+   <receiver>BathysseurDialogBase</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_box</sender>
+   <signal>accepted()</signal>
+   <receiver>BathysseurDialogBase</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
